@@ -1,0 +1,3 @@
+# Serve static files via Apache when DEBUG is False
+RewriteEngine On
+RewriteRule ^static/(.*)$ menci/static/$1 [L]

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Bag Validation</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color:linen;
+        }
+        h2, h3, h4 {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .bag_container {
+             margin: 40px 0px;
+        }
+        .bag-item {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 15px;
+        }
+        .bag-item-details {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            flex-grow: 1;
+            color: #000;
+        }
+        .bag-item-title {
+            font-weight: bold;
+        }
+        .bag-item-price {
+            margin-top: 8px;
+        }
+        .bag-item-size {
+            margin-top: 8px;
+        }
+        .bag-item-quantity {
+            margin-top: 8px;
+        }
+        .bag-total {
+            margin: 30px 0;
+            text-align: left;
+            font-weight: bold;
+            color: #000;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer p {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color:navy;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hey Menci Boys</h2>
+    <h3>There is a new order passed, below are the products in the client bag:</h3>
+    <div class="bag_container">
+        {% for item in items %}
+        <div class="bag-item">
+          <div class="bag-item-details">
+            <div class="bag-item-title">{{item.product.title}}</div>
+            <div class="bag-item-size">Size: {{item.size}}</div>
+            <div class="bag-item-quantity">Quantity: {{item.quantity}}</div>
+            <div class="bag-item-price">Price: {{item.price}} TND</div>
+          </div>
+        </div>
+        {% endfor %}
+        <div class="bag-total">
+          Total: {{total}} TND
+        </div>
+    </div>
+    <h3>Client informations:</h3>
+    <h4>Name: {{client.name}}</h4>
+    <h4>email: {{client.email}}</h4>
+    <h4>address: {{client.address}}</h4>
+    <h4>Phone: {{client.phone}}</h4>
+    <div class="footer">
+        <p>Business Time!</p>
+    </div>
+</body>
+</html>

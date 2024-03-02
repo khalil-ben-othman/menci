@@ -1,0 +1,696 @@
+
+Internal Server Error: /admin/backend/product/
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 633, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'backend_product.old_price' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/django/base.py", line 172, in execute
+    return self.cursor.execute(query, new_args)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'backend_product.old_price' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/django/base.py", line 172, in execute
+    return self.cursor.execute(query, new_args)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+django.db.utils.ProgrammingError: (1054, "1054 (42S22): Unknown column 'backend_product.old_price' in 'field list'", '42S22')
+Internal Server Error: /admin/backend/product/
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 633, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'backend_product.old_price' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/django/base.py", line 172, in execute
+    return self.cursor.execute(query, new_args)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'backend_product.old_price' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/django/base.py", line 172, in execute
+    return self.cursor.execute(query, new_args)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+django.db.utils.ProgrammingError: (1054, "1054 (42S22): Unknown column 'backend_product.old_price' in 'field list'", '42S22')
+Internal Server Error: /admin/backend/product/
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 633, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'backend_product.old_price' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/django/base.py", line 172, in execute
+    return self.cursor.execute(query, new_args)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'backend_product.old_price' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/django/base.py", line 172, in execute
+    return self.cursor.execute(query, new_args)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+django.db.utils.ProgrammingError: (1054, "1054 (42S22): Unknown column 'backend_product.old_price' in 'field list'", '42S22')
+Internal Server Error: /admin/backend/product/
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 633, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'backend_product.old_price' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/django/base.py", line 172, in execute
+    return self.cursor.execute(query, new_args)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'backend_product.old_price' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/django/base.py", line 172, in execute
+    return self.cursor.execute(query, new_args)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+django.db.utils.ProgrammingError: (1054, "1054 (42S22): Unknown column 'backend_product.old_price' in 'field list'", '42S22')
+Internal Server Error: /api/getProducts
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 633, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'backend_product.old_price' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/django/base.py", line 172, in execute
+    return self.cursor.execute(query, new_args)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'backend_product.old_price' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home3/sweyisal/menci/backend/api/views.py", line 17, in getProducts
+    return Response(serializer.data)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/django/base.py", line 172, in execute
+    return self.cursor.execute(query, new_args)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+django.db.utils.ProgrammingError: (1054, "1054 (42S22): Unknown column 'backend_product.old_price' in 'field list'", '42S22')
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Internal Server Error: /admin/backend/product/
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 633, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'backend_product.old_price' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/django/base.py", line 172, in execute
+    return self.cursor.execute(query, new_args)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'backend_product.old_price' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/django/base.py", line 172, in execute
+    return self.cursor.execute(query, new_args)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home3/sweyisal/virtualenv/menci/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+django.db.utils.ProgrammingError: (1054, "1054 (42S22): Unknown column 'backend_product.old_price' in 'field list'", '42S22')
+Not Found: /static/assets/back_lQYT1lT.png
+Not Found: /static/assets/back-blue_bVx2mho.png
+Not Found: /static/assets/pileee_DNIMRkH.png
+Not Found: /static/assets/back_lQYT1lT.png
+Not Found: /static/assets/back-blue_bVx2mho.png
+Not Found: /static/assets/back_lQYT1lT.png
+Not Found: /static/assets/back_purple_jO8aXOS.png
+Not Found: /static/assets/pileee_DNIMRkH.png
+Not Found: /static/assets/back_lQYT1lT.png
+Not Found: /static/assets/back-blue_bVx2mho.png
+Not Found: /static/assets/back_lQYT1lT.png
+Not Found: /static/assets/back_purple_jO8aXOS.png
+Not Found: /static/assets/back_lQYT1lT.png
+Not Found: /static/assets/back-blue_bVx2mho.png
+Not Found: /static/assets/back_purple_jO8aXOS.png
+Not Found: /static/assets/back_qsWSs90.png
+Not Found: /aaa
+[UID:1899][841437] Child process with pid: 858227 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][942066] Child process with pid: 959225 was killed by signal: 15, core dumped: no
+[UID:1899][942066] Child process with pid: 970865 was killed by signal: 15, core dumped: no
+[UID:1899][1000655] Child process with pid: 1000803 was killed by signal: 15, core dumped: no
+[UID:1899][1000655] Child process with pid: 1000804 was killed by signal: 15, core dumped: no
+[UID:1899][1000655] Child process with pid: 1000692 was killed by signal: 15, core dumped: no
+[UID:1899][1000655] Child process with pid: 1000807 was killed by signal: 15, core dumped: no
+[UID:1899][1000655] Child process with pid: 1000806 was killed by signal: 15, core dumped: no
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423870] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1899][423932] packetLen < 0
+[UID:1899][2531532] Child process with pid: 2544245 was killed by signal: 15, core dumped: no
+[UID:1899][2875857] Child process with pid: 2875906 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][3790277] Child process with pid: 3911925 was killed by signal: 15, core dumped: no
+[UID:1899][3790277] Child process with pid: 3941051 was killed by signal: 15, core dumped: no
+[UID:1899][3790277] Child process with pid: 3941073 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+[UID:1899][3966277] Child process with pid: 3966333 was killed by signal: 15, core dumped: no
+[UID:1899][3992537] Child process with pid: 3992565 was killed by signal: 15, core dumped: no
+[UID:1899][3997367] Child process with pid: 4016121 was killed by signal: 15, core dumped: no
+[UID:1899][3997367] Child process with pid: 4017516 was killed by signal: 15, core dumped: no
+[UID:1899][4169867] Child process with pid: 4173600 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][4169867] Child process with pid: 4173582 was killed by signal: 15, core dumped: no
+[UID:1899][4169867] Child process with pid: 48732 was killed by signal: 15, core dumped: no
+[UID:1899][76739] Child process with pid: 77139 was killed by signal: 15, core dumped: no
+[UID:1899][76739] Child process with pid: 76835 was killed by signal: 15, core dumped: no
+[UID:1899][76739] Child process with pid: 79043 was killed by signal: 15, core dumped: no
+[UID:1899][76739] Child process with pid: 79711 was killed by signal: 15, core dumped: no
+[UID:1899][76739] Child process with pid: 79156 was killed by signal: 15, core dumped: no
+[UID:1899][113778] Child process with pid: 169708 was killed by signal: 15, core dumped: no
+[UID:1899][113778] Child process with pid: 169723 was killed by signal: 15, core dumped: no
+[UID:1899][1075121] Child process with pid: 1075163 was killed by signal: 15, core dumped: no
+[UID:1899][1075121] Child process with pid: 1075180 was killed by signal: 15, core dumped: no
+[UID:1899][1075121] Child process with pid: 1075194 was killed by signal: 15, core dumped: no
+[UID:1899][1075121] Child process with pid: 1075526 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][1168763] Child process with pid: 1186486 was killed by signal: 15, core dumped: no
+[UID:1899][1291961] Child process with pid: 1292061 was killed by signal: 15, core dumped: no
+[UID:1899][1383586] Child process with pid: 1383670 was killed by signal: 15, core dumped: no
+[UID:1899][1532212] Child process with pid: 1532252 was killed by signal: 15, core dumped: no
+[UID:1899][1532212] Child process with pid: 1532256 was killed by signal: 15, core dumped: no
+[UID:1899][1532212] Child process with pid: 1532245 was killed by signal: 15, core dumped: no
+[UID:1899][1532212] Child process with pid: 1532257 was killed by signal: 15, core dumped: no
+[UID:1899][1541236] Child process with pid: 1542694 was killed by signal: 15, core dumped: no
+[UID:1899][1541236] Child process with pid: 1541411 was killed by signal: 15, core dumped: no
+[UID:1899][3201138] Child process with pid: 3201160 was killed by signal: 15, core dumped: no
+[UID:1899][3228559] Child process with pid: 3228598 was killed by signal: 15, core dumped: no
+[UID:1899][3228559] Child process with pid: 3228790 was killed by signal: 15, core dumped: no
+[UID:1899][3245719] Child process with pid: 3245751 was killed by signal: 15, core dumped: no
+[UID:1899][3245719] Child process with pid: 3245866 was killed by signal: 15, core dumped: no
+[UID:1899][3245719] Child process with pid: 3245754 was killed by signal: 15, core dumped: no
+[UID:1899][3309844] Child process with pid: 3309895 was killed by signal: 15, core dumped: no
+[UID:1899][3435120] Child process with pid: 3435140 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][3435120] Child process with pid: 3435143 was killed by signal: 15, core dumped: no
+[UID:1899][3435120] Child process with pid: 3435160 was killed by signal: 15, core dumped: no
+[UID:1899][3435120] Child process with pid: 3435161 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][3525302] Child process with pid: 3525322 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][8724] Child process with pid: 8749 was killed by signal: 15, core dumped: no
+[UID:1899][8724] Child process with pid: 8855 was killed by signal: 15, core dumped: no
+[UID:1899][8724] Child process with pid: 8863 was killed by signal: 15, core dumped: no
+[UID:1899][8724] Child process with pid: 8894 was killed by signal: 15, core dumped: no
+[UID:1899][736137] Child process with pid: 742845 was killed by signal: 15, core dumped: no
+[UID:1899][736137] Child process with pid: 742846 was killed by signal: 15, core dumped: no
+[UID:1899][736137] Child process with pid: 742841 was killed by signal: 15, core dumped: no
+[UID:1899][765793] Child process with pid: 771563 was killed by signal: 15, core dumped: no
+[UID:1899][3452461] Child process with pid: 3452490 was killed by signal: 15, core dumped: no
+[UID:1899][4051690] Child process with pid: 4057758 was killed by signal: 15, core dumped: no
+[UID:1899][4051690] Child process with pid: 4057820 was killed by signal: 15, core dumped: no
+[UID:1899][4051690] Child process with pid: 4057821 was killed by signal: 15, core dumped: no
+[UID:1899][3710664] Child process with pid: 3710678 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+[UID:1899][3710664] Child process with pid: 3711075 was killed by signal: 15, core dumped: no
+[UID:1899][3710664] Child process with pid: 3711074 was killed by signal: 15, core dumped: no
+[UID:1899][3710664] Child process with pid: 3711076 was killed by signal: 15, core dumped: no
+[UID:1899][3710664] Child process with pid: 3711642 was killed by signal: 15, core dumped: no
+[UID:1899][3710664] Child process with pid: 3711654 was killed by signal: 15, core dumped: no
+[UID:1899][3710664] Child process with pid: 3711469 was killed by signal: 15, core dumped: no
+[UID:1899][3710664] Child process with pid: 3712618 was killed by signal: 15, core dumped: no
+[UID:1899][3710664] Child process with pid: 3712619 was killed by signal: 15, core dumped: no
+[UID:1899][3812050] Child process with pid: 3812069 was killed by signal: 15, core dumped: no
+[UID:1899][3812050] Child process with pid: 3812102 was killed by signal: 15, core dumped: no
+[UID:1899][3812050] Child process with pid: 3812103 was killed by signal: 15, core dumped: no
+[UID:1899][1817899] Child process with pid: 1817942 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+[UID:1899][1523612] Child process with pid: 1523704 was killed by signal: 15, core dumped: no
+[UID:1899][1523612] Child process with pid: 1523709 was killed by signal: 15, core dumped: no
+[UID:1899][1523612] Child process with pid: 1523646 was killed by signal: 15, core dumped: no
+[UID:1899][1523612] Child process with pid: 1523713 was killed by signal: 15, core dumped: no
+[UID:1899][1273638] Child process with pid: 1273730 was killed by signal: 15, core dumped: no
+[UID:1899][3713477] Child process with pid: 3713518 was killed by signal: 15, core dumped: no
+[UID:1899][3713477] Child process with pid: 3713533 was killed by signal: 15, core dumped: no
+[UID:1899][3713477] Child process with pid: 3713514 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][2530540] Child process with pid: 2530609 was killed by signal: 15, core dumped: no
+[UID:1899][2530540] Child process with pid: 2530581 was killed by signal: 15, core dumped: no
+[UID:1899][2530540] Child process with pid: 2530577 was killed by signal: 15, core dumped: no
+[UID:1899][2979750] Child process with pid: 2980099 was killed by signal: 15, core dumped: no
+[UID:1899][294316] Child process with pid: 294375 was killed by signal: 15, core dumped: no
+[UID:1899][1514543] Child process with pid: 1514899 was killed by signal: 15, core dumped: no
+[UID:1899][1514543] Child process with pid: 1514900 was killed by signal: 15, core dumped: no
+[UID:1899][1561181] Child process with pid: 1561222 was killed by signal: 15, core dumped: no
+[UID:1899][99947] Child process with pid: 100152 was killed by signal: 15, core dumped: no
+[UID:1899][1360202] Child process with pid: 1360286 was killed by signal: 15, core dumped: no
+[UID:1899][1360202] Child process with pid: 1360281 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][3902775] Child process with pid: 3916672 was killed by signal: 15, core dumped: no
+[UID:1899][3902775] Child process with pid: 3916673 was killed by signal: 15, core dumped: no
+[UID:1899][977762] Child process with pid: 977840 was killed by signal: 15, core dumped: no
+[UID:1899][977762] Child process with pid: 977841 was killed by signal: 15, core dumped: no
+[UID:1899][1007114] Child process with pid: 1011520 was killed by signal: 15, core dumped: no
+[UID:1899][2120622] Child process with pid: 2120662 was killed by signal: 15, core dumped: no
+[UID:1899][2120622] Child process with pid: 2120775 was killed by signal: 15, core dumped: no
+[UID:1899][2120622] Child process with pid: 2120776 was killed by signal: 15, core dumped: no
+[UID:1899][3473483] Child process with pid: 3473533 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][3878749] Child process with pid: 3878772 was killed by signal: 15, core dumped: no
+[UID:1899][3878749] Child process with pid: 3878783 was killed by signal: 15, core dumped: no
+[UID:1899][1234099] Child process with pid: 1234134 was killed by signal: 15, core dumped: no
+[UID:1899][1234099] Child process with pid: 1234116 was killed by signal: 15, core dumped: no
+[UID:1899][2479815] Child process with pid: 2479830 was killed by signal: 15, core dumped: no
+[UID:1899][2479815] Child process with pid: 2479889 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][2736718] Child process with pid: 2736784 was killed by signal: 15, core dumped: no
+[UID:1899][2736718] Child process with pid: 2737260 was killed by signal: 15, core dumped: no
+[UID:1899][2736718] Child process with pid: 2736768 was killed by signal: 15, core dumped: no
+[UID:1899][1647117] Child process with pid: 1647139 was killed by signal: 15, core dumped: no
+[UID:1899][3033701] Child process with pid: 3033864 was killed by signal: 15, core dumped: no
+[UID:1899][3033701] Child process with pid: 3033840 was killed by signal: 15, core dumped: no
+[UID:1899][846007] Child process with pid: 846034 was killed by signal: 15, core dumped: no
+[UID:1899][846007] Child process with pid: 846039 was killed by signal: 15, core dumped: no
+[UID:1899][846007] Child process with pid: 846042 was killed by signal: 15, core dumped: no
+[UID:1899][2023756] Child process with pid: 2024070 was killed by signal: 15, core dumped: no
+[UID:1899][2023756] Child process with pid: 2024028 was killed by signal: 15, core dumped: no
+[UID:1899][2023756] Child process with pid: 2024027 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+[UID:1899][971736] Child process with pid: 984527 was killed by signal: 15, core dumped: no
+[UID:1899][971736] Child process with pid: 984532 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][971736] Child process with pid: 984604 was killed by signal: 15, core dumped: no
+[UID:1899][971736] Child process with pid: 984640 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][2830595] Child process with pid: 2830611 was killed by signal: 15, core dumped: no
+[UID:1899][2830595] Child process with pid: 2830634 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+[UID:1899][725545] Child process with pid: 726104 was killed by signal: 15, core dumped: no
+[UID:1899][725545] Child process with pid: 725634 was killed by signal: 15, core dumped: no
+[UID:1899][725545] Child process with pid: 726105 was killed by signal: 15, core dumped: no
+[UID:1899][725545] Child process with pid: 726106 was killed by signal: 15, core dumped: no
+[UID:1899][2591369] Child process with pid: 2591404 was killed by signal: 15, core dumped: no
+[UID:1899][3824608] Child process with pid: 3824634 was killed by signal: 15, core dumped: no
+[UID:1899][3824608] Child process with pid: 3824627 was killed by signal: 15, core dumped: no
+[UID:1899][2774843] Child process with pid: 2774966 was killed by signal: 15, core dumped: no
+[UID:1899][1328937] Child process with pid: 1329516 was killed by signal: 15, core dumped: no
+[UID:1899][1328937] Child process with pid: 1328946 was killed by signal: 15, core dumped: no
+[UID:1899][1854759] Child process with pid: 1854794 was killed by signal: 15, core dumped: no
+[UID:1899][1854759] Child process with pid: 1854774 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][2451352] Child process with pid: 2451375 was killed by signal: 15, core dumped: no
+[UID:1899][2451352] Child process with pid: 2451374 was killed by signal: 15, core dumped: no
+[UID:1899][39811] Child process with pid: 39953 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][39811] Child process with pid: 39868 was killed by signal: 15, core dumped: no
+[UID:1899][159674] Child process with pid: 159943 was killed by signal: 15, core dumped: no
+[UID:1899][159674] Child process with pid: 159993 was killed by signal: 15, core dumped: no
+[UID:1899][159674] Child process with pid: 160003 was killed by signal: 15, core dumped: no
+[UID:1899][1072010] Child process with pid: 1072033 was killed by signal: 15, core dumped: no
+[UID:1899][1072010] Child process with pid: 1072025 was killed by signal: 15, core dumped: no
+[UID:1899][1072010] Child process with pid: 1072043 was killed by signal: 15, core dumped: no
+[UID:1899][1072010] Child process with pid: 1072082 was killed by signal: 15, core dumped: no
+[UID:1899][1072010] Child process with pid: 1072089 was killed by signal: 15, core dumped: no
+[UID:1899][1432243] Child process with pid: 1442624 was killed by signal: 15, core dumped: no
+[UID:1899][1432243] Child process with pid: 1442623 was killed by signal: 15, core dumped: no
+[UID:1899][1886299] Child process with pid: 1886323 was killed by signal: 15, core dumped: no
+[UID:1899][1886299] Child process with pid: 1886322 was killed by signal: 15, core dumped: no
+[UID:1899][1886299] Child process with pid: 1886325 was killed by signal: 15, core dumped: no
+[UID:1899][3189586] Child process with pid: 3190538 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][692631] Child process with pid: 692814 was killed by signal: 15, core dumped: no
+[UID:1899][692631] Child process with pid: 692787 was killed by signal: 15, core dumped: no
+[UID:1899][1107781] Child process with pid: 1107805 was killed by signal: 15, core dumped: no
+[UID:1899][1107781] Child process with pid: 1107905 was killed by signal: 15, core dumped: no
+[UID:1899][1210663] Child process with pid: 1220094 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][1210663] Child process with pid: 1220095 was killed by signal: 15, core dumped: no
+[UID:1899][1210663] Child process with pid: 1233640 was killed by signal: 15, core dumped: no
+[UID:1899][1210663] Child process with pid: 1233641 was killed by signal: 15, core dumped: no
+[UID:1899][1269236] Child process with pid: 1287352 was killed by signal: 15, core dumped: no
+[UID:1899][1323021] Child process with pid: 1339607 was killed by signal: 15, core dumped: no
+[UID:1899][1352097] Child process with pid: 1352192 was killed by signal: 15, core dumped: no
+[UID:1899][1352097] Child process with pid: 1352190 was killed by signal: 15, core dumped: no
+[UID:1899][1352097] Child process with pid: 1352189 was killed by signal: 15, core dumped: no
+[UID:1899][1352097] Child process with pid: 1361123 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][1352097] Child process with pid: 1361122 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][1428209] Child process with pid: 1428245 was killed by signal: 15, core dumped: no
+[UID:1899][2149822] Child process with pid: 2153976 was killed by signal: 15, core dumped: no
+[UID:1899][3089225] Child process with pid: 3089241 was killed by signal: 15, core dumped: no
+[UID:1899][3089225] Child process with pid: 3089242 was killed by signal: 15, core dumped: no
+[UID:1899][3413281] Child process with pid: 3413491 was killed by signal: 15, core dumped: no
+[UID:1899][3413281] Child process with pid: 3413288 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1899][3413281] Child process with pid: 3415903 was killed by signal: 15, core dumped: no
+[UID:1899][344267] Child process with pid: 344285 was killed by signal: 15, core dumped: no
+[UID:1899][344267] Child process with pid: 344508 was killed by signal: 15, core dumped: no
+[UID:1899][344267] Child process with pid: 344509 was killed by signal: 15, core dumped: no
+[UID:1899][344267] Child process with pid: 344289 was killed by signal: 15, core dumped: no
