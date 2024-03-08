@@ -4,11 +4,13 @@ from backend.models import Order
 from django.conf import settings
 
 
+
 def send_email_with_order(order_id):
     order = Order.objects.get(id=order_id)
     client = order.client
     items = order.items.all()
-
+    
+    
     client_subject = 'Your Bag Validation'
     admin_subject = 'New Order'
     from_email = settings.EMAIL_HOST_USER
@@ -21,9 +23,9 @@ def send_email_with_order(order_id):
         'items': items,
         'total': order.total, 
     }
-
+    print(items.first().product.images.first().src)
     # Render the email template
-    client_email_content = render_to_string('email_templates/bag_validation_email.html', context)
+    client_email_content = render_to_string('email_templates/new-email.html', context)
     admins_email_content = render_to_string('email_templates/new_order_email.html', context)
     # Send the email
     send_mail(client_subject, client_email_content, from_email, recipient_list, html_message=client_email_content, fail_silently=False)
