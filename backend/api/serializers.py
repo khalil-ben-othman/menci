@@ -1,13 +1,20 @@
 from rest_framework import serializers
-from backend.models import Product, Item, Image, Message
+from backend.models import Product, Item, Image, Message, Size
+
 
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image
         fields = '__all__'
 
+class SizeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Size
+        fields = '__all__'
+
 class ProductSerializer(serializers.ModelSerializer):
     images = ImageSerializer(read_only=True, many=True)
+    sizes = SizeSerializer(read_only=True, many=True)
     class Meta:
         model = Product
         fields = '__all__'

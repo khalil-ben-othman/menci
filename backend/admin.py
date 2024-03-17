@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from django.utils.html import format_html
-from .models import Product, Client, Item, Order, Message, Subscriber, Image
+from .models import Product, Client, Item, Order, Message, Subscriber, Image, Size
 
 class ImageInline(admin.TabularInline):
     model = Product.images.through
@@ -13,15 +13,21 @@ class ImageInline(admin.TabularInline):
 
     image_preview.short_description = 'Image Preview'
 
+class SizeInline(admin.TabularInline):
+    model = Product.sizes.through
+    extra = 1
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    inlines = [ImageInline]
+    inlines = [SizeInline, ImageInline]
     list_display = ['title', 'image_preview_list']
     fieldsets = (
         (None, {
             'fields': ('title', 'price', 'old_price', 'description', 'sold_out'),
         }),
     )
+    
+    
 
     def image_preview_list(self, obj):
         previews = []
@@ -48,3 +54,4 @@ class MessageAdmin(admin.ModelAdmin):
 admin.site.register(Item)
 admin.site.register(Subscriber)
 admin.site.register(Image)
+admin.site.register(Size)

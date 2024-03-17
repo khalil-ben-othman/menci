@@ -2,7 +2,7 @@
 {% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr,auto' }}">
 <head>
-<title>Menci site admin</title>
+<title>menci admin site</title>
 <link rel="stylesheet" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}">
 {% block dark-mode-vars %}
   <link rel="stylesheet" href="{% static "admin/css/dark_mode.css" %}">
@@ -34,8 +34,7 @@
     {% block header %}
     <div id="header">
         <div id="branding">
-          
-          <img src="{% static '../static/assets/png-black.png' %}" style="width: 80px; ">
+        {% block branding %}{% endblock %}
         </div>
         {% block usertools %}
         {% if has_permission %}
@@ -61,7 +60,6 @@
                     {% csrf_token %}
                     <button type="submit">{% translate 'Log out' %}</button>
                 </form>
-                
             {% endblock %}
         </div>
         {% endif %}

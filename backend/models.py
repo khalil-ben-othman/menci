@@ -6,12 +6,20 @@ class Image(models.Model):
     
     def __str__(self):
         return f"{self.src}"
+
+class Size(models.Model):
+    name = models.CharField(max_length=10, unique=True)
+
+    def __str__(self):
+        return self.name
+
         
 class Product(models.Model):
     title = models.CharField(max_length=100)
     price = models.PositiveBigIntegerField()
     old_price = models.PositiveBigIntegerField(blank=True, null=True)
     description = models.TextField(max_length=1000)
+    sizes = models.ManyToManyField(Size)
     images = models.ManyToManyField(Image)
     sold_out = models.BooleanField(default=False)
     
